@@ -15,16 +15,16 @@
 */
 
 //CODE HERE
-
-let me = {
+let me={
   firstName: 'Devin',
   state: 'Utah',
   age: 19,
-  greeter: function(){
-   let message = `Hello my name is ${firstName} and I live in, ${state}`
+  greeter:function(){ 
+    return `Hello! My name is ${this.firstName} and I live in ${this.state}`
   }
 }
-console.log(message)
+console.log(me.greeter())
+
 
 //////////////////PROBLEM 2////////////////////
 /*
@@ -50,17 +50,19 @@ console.log(message)
   }
 */
 
-//CODE HERE
-// 
-
-function carFactory(make, model, year){
-  this.make = make,
-  this.model = model,
-  this.year = year
-} if(year > 2018){
-  carFactory.isNew = true
-} else{
-  carFactoy.isNew = false
+function carFactory(make,model,year){
+  let car = {
+  make:make,
+  model:model,
+  year:year
+ }
+ if(car.year > 2018){
+     car.isNew = true
+ }else{
+   car.isNew = false
+ }
+ return car
 }
-let camry = new carFactory('Toyota', 'Camry', "2013")
-console.log(camry)
+
+console.log(carFactory('Toyota','Camry',2019))
+console.log(carFactory('Ford','Mustang',1969))

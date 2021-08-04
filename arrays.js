@@ -21,11 +21,12 @@ console.log(colorCopy)
 const numbers = [1, 2, 3, 4, 5]
 
 //CODE HERE
-let middleNums = [
-  numbers.pop(),
-  numbers.shift()
+
+let middleNums =[
+  numbers.splice(1,3,0)
 ]
-console.log(numbers)
+console.log(middleNums)
+
 //////////////////PROBLEM 4////////////////////
 /* 
   Create a function called 'bigOrSmall' that takes in one parameter, 'arr', 
@@ -40,21 +41,17 @@ console.log(numbers)
 */
 
 // CODE HERE
-
 function bigOrSmall(arr){
-  let answers = [];
-  for(let i=0; i< arr.length; i++){
-    if(arr[i] > 100){
-      answers.push('big')
-      console.log(answers[i])
-}
- else{
+  let answers = []
+  for(let i=0;i<arr.length;i++){
+    if(arr[i]>100){
+      answers.push('big') 
+    }else{
     answers.push('small')
-    console.log(answers[i])
-
-  }   
- } 
-    
+  }
+ }
+  return answers
 }
 
-bigOrSmall([40])
+console.log(bigOrSmall([99]))
+console.log(bigOrSmall([199]))
